@@ -2,8 +2,6 @@
 
 A Python application that uses your webcam and MediaPipe Pose estimation to count bicep curls in real-time. It provides visual feedback on the current stage of the curl (up/down) and the total number of repetitions.
 
-![Demo Screenshot](placeholder.png)
-*(Replace `placeholder.png` with an actual screenshot or GIF of the application in action after you run it.)*
 
 ## Features
 
@@ -82,15 +80,3 @@ Before running the application, ensure you have Python 3 installed on your syste
 -   **Save Workout Data:** Log workout sessions (reps, duration) to a file.
 -   **GUI:** Develop a more user-friendly graphical interface instead of the basic OpenCV window.
 -   **Different Exercises:** Adapt the angle calculation and logic to track other exercises (e.g., squats, shoulder presses).
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE.txt). (You would need to create a `LICENSE.txt` file with the MIT license text if you choose this).
-
----
-
-Remember to:
-1.  Save the Python code as `bicep_curl_counter.py`.
-2.  Save the Markdown content as `README.md` in the same directory.
-3.  **Crucially, take a screenshot or record a short GIF of your application running and replace `placeholder.png` in the `README.md` with it.** This makes your GitHub project much more engaging.
-4.  If you choose a license like MIT, create a `LICENSE.txt` file and paste the MIT license text into it.
