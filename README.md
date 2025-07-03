@@ -72,19 +72,6 @@ A computer vision-powered application that uses pose estimation to count bicep c
 
 ---
 
-## 📁 File Structure
-
-```
-Bicep_curl_counter/
-├── main.py
-├── utils.py
-├── requirements.txt
-├── docs/
-│   └── demo.gif
-```
-
----
-
 ## 🔮 Future Additions
 
 * Add squats, pushups, and shoulder press counters
