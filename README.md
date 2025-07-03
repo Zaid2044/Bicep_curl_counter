@@ -1,82 +1,101 @@
-# AI Bicep Curl Counter
+# Bicep Curl Counter 💪 (Pose Estimation)
 
-A Python application that uses your webcam and MediaPipe Pose estimation to count bicep curls in real-time. It provides visual feedback on the current stage of the curl (up/down) and the total number of repetitions.
+**Author:** MOHAMMED ZAID AHMED  
+**Repository:** [Bicep\_curl\_counter](https://github.com/Zaid2044/Bicep_curl_counter)
 
+A computer vision-powered application that uses pose estimation to count bicep curls in real time using your webcam. Built with MediaPipe and OpenCV, it provides an interactive and accurate workout tracking experience.
 
-## Features
+---
 
--   **Real-time Pose Estimation:** Utilizes Google's MediaPipe Pose to detect 33 body landmarks.
--   **Bicep Curl Counting:** Tracks the angle of the elbow joints to determine curl stage and count repetitions.
--   **Visual Feedback:** Displays the current rep count, curl stage ("UP", "DOWN", "START"), and basic form feedback on the video feed.
--   **Webcam Input:** Uses your default webcam for live video processing.
--   **Cross-Platform:** Built with Python, OpenCV, and MediaPipe, making it runnable on most systems.
+## 🔍 Features
 
-## Technologies Used
+* 🎯 Real-time bicep curl detection using elbow angle
+* 📸 Live webcam tracking via OpenCV
+* 📈 Repetition counter with stage detection ("Up", "Down")
+* 🏋️‍♂️ Instant feedback on form and reps
+* 🧠 Lightweight and runs on CPU
 
--   **Python 3.x**
--   **OpenCV (`opencv-python`)**: For video capture, image manipulation, and display.
--   **MediaPipe (`mediapipe`)**: For high-fidelity body pose tracking.
--   **NumPy (`numpy`)**: For numerical operations, especially angle calculations.
+---
 
-## Prerequisites
+## 🧠 Tech Stack
 
-Before running the application, ensure you have Python 3 installed on your system. You will also need a webcam.
+* **Language:** Python
+* **Libraries:** OpenCV, MediaPipe, NumPy
+* **Platform:** Desktop (Webcam required)
 
-## Installation
+---
 
-1.  **Clone the repository (or download the `bicep_curl_counter.py` file):**
-    ```bash
-    git clone <repository_url> # If you create a git repo
-    cd <repository_directory>
-    ```
+## 🛠️ How It Works
 
-2.  **Create a virtual environment (recommended):**
-    ```bash
-    python -m venv venv
-    # On Windows
-    .\venv\Scripts\activate
-    # On macOS/Linux
-    source venv/bin/activate
-    ```
+* Detects key landmarks using **MediaPipe Pose**
+* Calculates **elbow angle** from shoulder, elbow, and wrist positions
+* Tracks motion range to count **reps** and display **status**
+* Visual feedback rendered on webcam feed
 
-3.  **Install the required Python packages:**
-    ```bash
-    pip install numpy opencv-python mediapipe
-    ```
+---
 
-## Usage
+## 🚀 Setup Instructions
 
-1.  Navigate to the directory where `bicep_curl_counter.py` is located.
-2.  Ensure your virtual environment is activated (if you created one).
-3.  Run the script from your terminal:
-    ```bash
-    python bicep_curl_counter.py
-    ```
-4.  A window will open showing your webcam feed with pose landmarks and the curl counter.
-5.  Perform bicep curls facing the camera. Ensure your shoulders, elbows, and wrists are visible.
-6.  Press the **'q'** key to quit the application.
+1. **Clone the repo**
 
-## How It Works
+   ```bash
+   git clone https://github.com/Zaid2044/Bicep_curl_counter.git
+   cd Bicep_curl_counter
+   ```
 
-1.  **Video Capture:** OpenCV captures video frames from the webcam.
-2.  **Image Preprocessing:** Each frame is flipped horizontally (for a mirror view) and converted from BGR (OpenCV's default) to RGB (MediaPipe's required format).
-3.  **Pose Estimation:** MediaPipe's Pose model processes the RGB image to detect 33 human body landmarks.
-4.  **Landmark Extraction:** Coordinates for the shoulders, elbows, and wrists (for both left and right arms) are extracted.
-5.  **Angle Calculation:** A custom function `calculate_angle` determines the angle at each elbow joint using the shoulder, elbow, and wrist coordinates.
-6.  **Curl Logic:**
-    -   The application defines two stages: "down" (arms extended, elbow angle > 160 degrees) and "up" (arms flexed, elbow angle < 30 degrees).
-    -   A repetition is counted when the user transitions from the "down" stage to the "up" stage for both arms simultaneously.
-7.  **Visualization:**
-    -   The detected pose landmarks and connections are drawn on the frame.
-    -   A status box displays the current repetition count, the curl stage, and basic form feedback.
-    -   The processed frame is displayed in an OpenCV window.
+2. **Create a virtual environment**
 
-## Customization and Potential Improvements
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\activate
+   ```
 
--   **Single Arm Tracking:** Modify the logic to track curls for each arm independently or focus on a dominant arm.
--   **Advanced Form Correction:** Implement more sophisticated feedback based on other joint angles (e.g., shoulder movement, back posture).
--   **Adjustable Thresholds:** Allow users to configure the angle thresholds for "up" and "down" stages.
--   **Sound Feedback:** Add audio cues for rep counts or form corrections.
--   **Save Workout Data:** Log workout sessions (reps, duration) to a file.
--   **GUI:** Develop a more user-friendly graphical interface instead of the basic OpenCV window.
--   **Different Exercises:** Adapt the angle calculation and logic to track other exercises (e.g., squats, shoulder presses).
+3. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run the application**
+
+   ```bash
+   python main.py
+   ```
+
+---
+
+## 📊 Demo
+
+<p align="center">
+  <img src="docs/demo.gif" alt="Bicep Curl Counter Demo" width="700"/>
+</p>
+
+---
+
+## 📁 File Structure
+
+```
+Bicep_curl_counter/
+├── main.py
+├── utils.py
+├── requirements.txt
+├── docs/
+│   └── demo.gif
+```
+
+---
+
+## 🔮 Future Additions
+
+* Add squats, pushups, and shoulder press counters
+* Voice feedback with rep count
+* Save workout logs to CSV
+* Optional GUI overlay with Tkinter or Flask
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
